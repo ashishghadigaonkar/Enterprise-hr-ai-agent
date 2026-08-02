@@ -1,0 +1,13 @@
+# IT Access & Security Policy
+
+1. Multi-Factor Authentication (MFA)
+MFA is mandatory across all company systems including Google Workspace, GitHub, and corporate VPN access.
+
+2. Password Policy
+Passwords must be at least 16 characters long and updated every 90 days. Password sharing is strictly prohibited.
+
+3. System Access Requests
+Software access requests (e.g. AWS console, Jira, GitHub repos) require approval from the employee's direct manager and IT Security.
+
+4. Device Security
+Laptops must remain encrypted with BitLocker/FileVault. Unattended devices must be locked immediately.

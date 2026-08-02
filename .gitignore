@@ -1,0 +1,30 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Outputs and Generated Files
+outputs/
+evaluation/eval_report.json
+*.log
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+.DS_Store

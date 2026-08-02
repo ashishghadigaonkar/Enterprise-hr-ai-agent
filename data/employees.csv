@@ -1,0 +1,5 @@
+employee_id,name,role,department,pto_balance,expense_limit
+EMP101,Alice Smith,Software Engineer,Engineering,15,500.00
+EMP102,Bob Jones,Product Manager,Product,10,1200.00
+EMP103,Charlie Brown,HR Specialist,Human Resources,22,300.00
+EMP104,Diana Prince,Security Lead,Security,8,2500.00
