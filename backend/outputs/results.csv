@@ -70,3 +70,82 @@ BQ-5-46F7,EMP101,PTO,Access Refusal: Employee 'EMP101' is not authorized to quer
 BQ-6-0325,EMP104,GENERAL,Security Policy Refusal: Your request contains patterns that violate our security policy and cannot be processed.,High,True,None,None,Approved,Flagged,cf212960-9e01-4a4e-a227-a8d1cf05f6a6,2026-08-03T07:26:51.472733
 BQ-7-920F,EMP999,EXPENSE,Access Refusal: Employee ID 'EMP999' is invalid or not registered in the employee directory.,High,False,None,None,Denied,Safe,c563fb19-f615-49b8-a3bc-9e12cd845818,2026-08-03T07:26:51.494815
 BQ-8-D63E,EMP102,EXPENSE,Here is your requested information: Expense limit for Bob Jones (EMP102): $1200.00 per claim.,High,False,ExpenseTool,None,Approved,Safe,296c29f4-198a-41f9-ab44-b792b9d0968f,2026-08-03T07:26:51.523719
+GQ101,EMP101,PTO,"Hello Alice,
+
+I've checked your current PTO balance, and you have 15 days available. If you have any questions or would like to request time off, please don't hesitate to reach out to me.
+
+Best regards,
+[Your Name]
+HR Assistant",High,False,LeaveTool,None,Approved,Safe,N/A,2026-08-03T08:09:12.562746
+GQ102,EMP102,EXPENSE,"Hello,
+
+According to our records, your maximum expense reimbursement limit is $1200.00 per claim. If you have any questions or need further clarification, please don't hesitate to reach out to me.
+
+Best regards,
+HR Assistant",High,False,ExpenseTool,None,Approved,Safe,N/A,2026-08-03T08:09:14.582879
+GQ103,EMP103,IT_ACCESS,"Dear Charlie Brown,
+
+I'm happy to assist you with your request for VPN access to facilitate remote work. I've initiated the process by creating an IT ticket (EMP103) and starting the MFA/Access review. 
+
+Please allow some time for our IT department to review and process your request. You will be notified once your VPN access has been approved and set up. If there's any additional information required from you, we'll be in touch.
+
+If you have any questions or concerns in the meantime, don't hesitate to reach out to me or the IT department. We're here to support you in enabling a secure and efficient remote work experience.
+
+Thank you for your patience and cooperation.
+
+Best regards,
+[Your Name]
+HR Assistant
+Human Resources Department",High,False,ITAccessTool,None,Approved,Safe,N/A,2026-08-03T08:09:17.109708
+GQ104,EMP101,HR_POLICY,"Dear [User],
+
+I hope this message finds you well. I'd be happy to help you with your query regarding the policy for rolling over unused PTO into the next year.
+
+According to our company's PTO policy, a maximum of 5 unused PTO days can be rolled over into the next calendar year. Any additional unused PTO days will expire on December 31st. This means that you can carry over up to 5 days of unused PTO to the following year, but any days beyond that will not be eligible for rollover.
+
+If you have any further questions or concerns about our PTO policy, please don't hesitate to reach out to me. I'm here to help and provide any clarification you may need.
+
+Thank you for your inquiry, and I look forward to assisting you further.
+
+Best regards,
+[Your Name]
+HR Assistant",High,False,RAGRetriever,"[pto_policy.txt]
+3. Rollover Policy
+A maximum of 5 unused PTO days can be rolled over into the next calendar year. Any additional unused PTO days will expire on December 31st.
+
+4. Parental & Bereavement Leave
+Parental leave provides up to 12 weeks of paid leave for new parents. Bereavement leave provides up to 5 days of paid leave.; [pto_policy.txt]
+# Paid Time Off (PTO) Policy
+
+1. Overview
+Full-time employees receive standard Paid Time Off (PTO) accruals based on tenure. Standard accrued PTO for full-time employees ranges between 15 to 25 days per calendar year.
+
+2. Request Procedure
+Employees must request PTO at least 5 business days in advance using the self-service HR portal. Requests longer than 5 consecutive business days require manager approval.",Approved,Safe,N/A,2026-08-03T08:09:19.618709
+GQ105,EMP101,PTO,Access Refusal: Employee 'EMP101' is not authorized to query confidential records of 'EMP102'.,High,False,None,None,Denied,Safe,N/A,2026-08-03T08:09:20.555544
+GQ106,EMP104,GENERAL,Security Policy Refusal: Your request contains patterns that violate our security policy and cannot be processed.,High,True,None,None,Approved,Flagged,N/A,2026-08-03T08:09:20.569557
+GQ107,EMP999,EXPENSE,Access Refusal: Employee ID 'EMP999' is invalid or not registered in the employee directory.,High,False,None,None,Denied,Safe,N/A,2026-08-03T08:09:21.627279
+GQ108,EMP102,EXPENSE,"Dear Bob Jones (EMP102),
+
+For expense claims over $25, please ensure that you provide a receipt to support your claim. This is a standard requirement to ensure that all expenses are properly documented and verified.
+
+As a reminder, your expense limit per claim is $1200.00. If you have any questions or concerns about the expense claim process, please don't hesitate to reach out to me.
+
+Thank you for your cooperation and understanding.
+
+Best regards,
+[Your Name]
+HR Assistant",High,False,ExpenseTool,None,Approved,Safe,N/A,2026-08-03T08:09:23.960967
+GQ109,EMP101,GENERAL,Security Policy Refusal: Your request contains patterns that violate our security policy and cannot be processed.,High,True,None,None,Approved,Flagged,N/A,2026-08-03T08:09:23.970931
+GQ110,EMP102,IT_ACCESS,"To submit an IT ticket for a hardware issue, you can follow these steps:
+
+1. Reach out to our IT department directly via email or phone to report the issue.
+2. Provide a detailed description of the hardware problem you're experiencing, including any error messages or symptoms.
+3. Include your name, employee ID (if applicable), and department (in this case, Product) to help our IT team quickly identify and address your issue.
+
+Alternatively, if we have an online ticketing system, you can also submit a ticket through that platform. If you're unsure about the process or need assistance, don't hesitate to ask, and I'll be happy to guide you through it.
+
+Please note that our IT team may initiate an MFA/Access review as part of the troubleshooting process, as seen in the case of Bob Jones (EMP102). This is a standard procedure to ensure the security and integrity of our systems.
+
+If you have any further questions or concerns, feel free to ask, and I'll do my best to assist you.",High,False,ITAccessTool,None,Approved,Safe,N/A,2026-08-03T08:09:26.531897
+Q-07CDE2,EMP101,GENERAL,Security Policy Refusal: Your request contains patterns that violate our security policy and cannot be processed.,High,True,None,None,Approved,Flagged,6671d846-a646-477b-8ccd-f49e5efef3c3,2026-08-03T12:47:25.009086

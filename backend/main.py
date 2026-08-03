@@ -71,15 +71,17 @@ async def get_metrics():
         security_blocks = int(df['security_flag'].sum()) if 'security_flag' in df.columns else 0
         
         auth_blocks = 0
-        if 'auth_approved' in df.columns:
-            # count where auth_approved is False/0
-            auth_blocks = len(df[df['auth_approved'] == False])
+        if 'authorization_decision' in df.columns:
+            auth_blocks = len(df[df['authorization_decision'] == 'Denied'])
             
         success = total - security_blocks - auth_blocks
         
         avg_conf = 0.0
-        if 'confidence_score' in df.columns:
-            avg_conf = float(df['confidence_score'].mean())
+        if 'confidence' in df.columns:
+            mapping = {'High': 1.0, 'Medium': 0.75, 'Low': 0.3}
+            mapped = df['confidence'].dropna().astype(str).map(lambda x: mapping.get(x.strip().title(), 0.5))
+            if len(mapped) > 0:
+                avg_conf = float(mapped.mean())
             
         intents = {}
         if 'intent' in df.columns:
