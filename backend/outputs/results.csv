@@ -1,0 +1,72 @@
+query_id,employee_id,intent,answer,confidence,security_flag,tool_used,retrieved_docs,authorization_decision,security_decision,trace_id,timestamp
+BQ101,EMP101,GENERAL,Request processed successfully.,Medium,False,None,None,Approved,Safe,a9865ea9-1acc-4620-b0dc-1d7bb868b8d1,2026-08-03T07:00:01.801242
+BQ102,EMP102,GENERAL,Request processed successfully.,Medium,False,None,None,Approved,Safe,70ffa9b6-9f93-48e3-8bf4-4990d964fb9a,2026-08-03T07:00:03.881756
+BQ103,EMP103,GENERAL,Request processed successfully.,Medium,False,None,None,Approved,Safe,5b178dc8-a671-4f61-bd8b-d5ec28901c0b,2026-08-03T07:00:06.253642
+BQ104,EMP101,GENERAL,Request processed successfully.,Medium,False,None,None,Approved,Safe,95d5fb23-f9fe-4727-869e-3d8fa32a514a,2026-08-03T07:00:08.775786
+BQ105,EMP101,GENERAL,Access Refusal: Employee 'EMP101' is not authorized to query confidential records of 'EMP102'.,High,False,None,None,Denied,Safe,d9584b22-a951-4b98-b6ce-3426b6ce58ed,2026-08-03T07:00:10.208230
+BQ106,EMP104,GENERAL,Security Policy Refusal: Your request contains patterns that violate our security policy and cannot be processed.,High,True,None,None,Approved,Flagged,d5acb936-11f0-41a0-aed0-d5b2bac6f1eb,2026-08-03T07:00:10.242226
+BQ107,EMP999,GENERAL,Access Refusal: Employee ID 'EMP999' is invalid or not registered in the employee directory.,High,False,None,None,Denied,Safe,7c83d1d8-4395-45aa-8a25-ed57c9e7c3e7,2026-08-03T07:00:11.410954
+BQ108,EMP102,GENERAL,Request processed successfully.,Medium,False,None,None,Approved,Safe,a330390d-c453-45e1-bae9-d95fa89be63a,2026-08-03T07:00:13.810489
+Q-6B833D,EMP101,GENERAL,Access Refusal: Employee 'EMP101' is not authorized to query confidential records of 'EMP102'.,High,False,None,None,Denied,Safe,a3c90e87-9bf1-4322-95e2-b612b3976f2c,2026-08-03T07:15:05.975631
+BQ-1-8000,EMP101,PTO,Here is your requested information: PTO Balance for Alice Smith (EMP101): 15 days available.,High,False,LeaveTool,None,Approved,Safe,d3bcd089-47fc-465a-856f-526e72f6f746,2026-08-03T07:16:08.719530
+BQ-2-7A2E,EMP102,EXPENSE,Here is your requested information: Expense limit for Bob Jones (EMP102): $1200.00 per claim.,High,False,ExpenseTool,None,Approved,Safe,e4c6031d-023b-48b4-8571-2d7e4ce223eb,2026-08-03T07:16:08.776652
+BQ-3-CFB5,EMP103,IT_ACCESS,Here is your requested information: IT Ticket created for Charlie Brown (EMP103). Department: Human Resources. MFA/Access review initiated.,High,False,ITAccessTool,None,Approved,Safe,55fe8131-95f0-4eea-9b86-1b9b55daeed9,2026-08-03T07:16:08.841480
+BQ-4-27A0,EMP101,HR_POLICY,Here is your requested information: Retrieved 2 policy document chunks.,High,False,RAGRetriever,"[pto_policy.txt]
+3. Rollover Policy
+A maximum of 5 unused PTO days can be rolled over into the next calendar year. Any additional unused PTO days will expire on December 31st.
+
+4. Parental & Bereavement Leave
+Parental leave provides up to 12 weeks of paid leave for new parents. Bereavement leave provides up to 5 days of paid leave.; [pto_policy.txt]
+# Paid Time Off (PTO) Policy
+
+1. Overview
+Full-time employees receive standard Paid Time Off (PTO) accruals based on tenure. Standard accrued PTO for full-time employees ranges between 15 to 25 days per calendar year.
+
+2. Request Procedure
+Employees must request PTO at least 5 business days in advance using the self-service HR portal. Requests longer than 5 consecutive business days require manager approval.",Approved,Safe,fef99aec-c99c-42f0-9d32-e9321b5e8b8d,2026-08-03T07:16:08.986790
+BQ-5-A313,EMP101,PTO,Access Refusal: Employee 'EMP101' is not authorized to query confidential records of 'EMP102'.,High,False,None,None,Denied,Safe,2c3974c0-7caa-4d5a-bd1e-99e58bd7f475,2026-08-03T07:16:09.019267
+BQ-6-009A,EMP104,GENERAL,Security Policy Refusal: Your request contains patterns that violate our security policy and cannot be processed.,High,True,None,None,Approved,Flagged,dc38d1b9-e7fa-463d-97d3-977d59de9af1,2026-08-03T07:16:09.036507
+BQ-7-8B62,EMP999,EXPENSE,Access Refusal: Employee ID 'EMP999' is invalid or not registered in the employee directory.,High,False,None,None,Denied,Safe,061143d2-6e91-416d-9ca7-f033e23fbb4a,2026-08-03T07:16:09.063557
+BQ-8-A2ED,EMP102,EXPENSE,Here is your requested information: Expense limit for Bob Jones (EMP102): $1200.00 per claim.,High,False,ExpenseTool,None,Approved,Safe,5072bbb3-065a-4d32-bb83-ff659597f6e5,2026-08-03T07:16:09.096642
+BQ-1-0BCE,EMP101,PTO,Here is your requested information: PTO Balance for Alice Smith (EMP101): 15 days available.,High,False,LeaveTool,None,Approved,Safe,68ea61cc-8bf0-45cb-a59b-e1b08cf01eb9,2026-08-03T07:22:06.905840
+BQ-2-7363,EMP102,EXPENSE,Here is your requested information: Expense limit for Bob Jones (EMP102): $1200.00 per claim.,High,False,ExpenseTool,None,Approved,Safe,1d84b664-8133-4e1e-86c0-6a2a2375e610,2026-08-03T07:22:06.939538
+BQ-3-3052,EMP103,IT_ACCESS,Here is your requested information: IT Ticket created for Charlie Brown (EMP103). Department: Human Resources. MFA/Access review initiated.,High,False,ITAccessTool,None,Approved,Safe,3bc846fa-4e52-488b-b2ea-992a0786ac99,2026-08-03T07:22:06.966380
+BQ-4-C88C,EMP101,HR_POLICY,Here is your requested information: Retrieved 2 policy document chunks.,High,False,RAGRetriever,"[pto_policy.txt]
+3. Rollover Policy
+A maximum of 5 unused PTO days can be rolled over into the next calendar year. Any additional unused PTO days will expire on December 31st.
+
+4. Parental & Bereavement Leave
+Parental leave provides up to 12 weeks of paid leave for new parents. Bereavement leave provides up to 5 days of paid leave.; [pto_policy.txt]
+# Paid Time Off (PTO) Policy
+
+1. Overview
+Full-time employees receive standard Paid Time Off (PTO) accruals based on tenure. Standard accrued PTO for full-time employees ranges between 15 to 25 days per calendar year.
+
+2. Request Procedure
+Employees must request PTO at least 5 business days in advance using the self-service HR portal. Requests longer than 5 consecutive business days require manager approval.",Approved,Safe,235837d8-3f8b-4d9e-93ac-849dcdd0ad27,2026-08-03T07:22:07.006587
+BQ-5-E5C2,EMP101,PTO,Access Refusal: Employee 'EMP101' is not authorized to query confidential records of 'EMP102'.,High,False,None,None,Denied,Safe,e36670ed-b706-4db0-9da5-c1be4cc72737,2026-08-03T07:22:07.043397
+BQ-6-E261,EMP104,GENERAL,Security Policy Refusal: Your request contains patterns that violate our security policy and cannot be processed.,High,True,None,None,Approved,Flagged,c7ac9790-c978-4cfc-a790-b5367239afe4,2026-08-03T07:22:07.060442
+BQ-7-B95E,EMP999,EXPENSE,Access Refusal: Employee ID 'EMP999' is invalid or not registered in the employee directory.,High,False,None,None,Denied,Safe,7935615d-e0d8-4d21-a65a-1625b8d5709e,2026-08-03T07:22:07.079849
+BQ-8-F934,EMP102,EXPENSE,Here is your requested information: Expense limit for Bob Jones (EMP102): $1200.00 per claim.,High,False,ExpenseTool,None,Approved,Safe,ae5ad0bb-557e-4531-be54-ef00e1587eb9,2026-08-03T07:22:07.105373
+Q-B2D7E2,EMP101,PTO,Here is your requested information: PTO Balance for Alice Smith (EMP101): 15 days available.,High,False,LeaveTool,None,Approved,Safe,d3c3ccf4-f176-4cd6-9bc5-fb74f795da54,2026-08-03T07:23:18.994264
+Q-0D37E9,EMP101,PTO,Here is your requested information: PTO Balance for Alice Smith (EMP101): 15 days available.,High,False,LeaveTool,None,Approved,Safe,15b043b5-99a1-415c-9565-355953dafcfa,2026-08-03T07:23:31.568268
+BQ-1-AE2A,EMP101,PTO,Here is your requested information: PTO Balance for Alice Smith (EMP101): 15 days available.,High,False,LeaveTool,None,Approved,Safe,567383a7-f3d4-4fd4-8255-f0293cf590b1,2026-08-03T07:26:51.336438
+BQ-2-CB32,EMP102,EXPENSE,Here is your requested information: Expense limit for Bob Jones (EMP102): $1200.00 per claim.,High,False,ExpenseTool,None,Approved,Safe,c0ea70d8-b7a0-4307-a78e-b7d7792dea48,2026-08-03T07:26:51.362152
+BQ-3-6FA5,EMP103,IT_ACCESS,Here is your requested information: IT Ticket created for Charlie Brown (EMP103). Department: Human Resources. MFA/Access review initiated.,High,False,ITAccessTool,None,Approved,Safe,444b28f4-7d6b-42f3-81c8-6f8e845e2295,2026-08-03T07:26:51.390732
+BQ-4-EDC3,EMP101,HR_POLICY,Here is your requested information: Retrieved 2 policy document chunks.,High,False,RAGRetriever,"[pto_policy.txt]
+3. Rollover Policy
+A maximum of 5 unused PTO days can be rolled over into the next calendar year. Any additional unused PTO days will expire on December 31st.
+
+4. Parental & Bereavement Leave
+Parental leave provides up to 12 weeks of paid leave for new parents. Bereavement leave provides up to 5 days of paid leave.; [pto_policy.txt]
+# Paid Time Off (PTO) Policy
+
+1. Overview
+Full-time employees receive standard Paid Time Off (PTO) accruals based on tenure. Standard accrued PTO for full-time employees ranges between 15 to 25 days per calendar year.
+
+2. Request Procedure
+Employees must request PTO at least 5 business days in advance using the self-service HR portal. Requests longer than 5 consecutive business days require manager approval.",Approved,Safe,86db4f3a-d9fb-4a98-bd9f-5cef94679598,2026-08-03T07:26:51.427334
+BQ-5-46F7,EMP101,PTO,Access Refusal: Employee 'EMP101' is not authorized to query confidential records of 'EMP102'.,High,False,None,None,Denied,Safe,e50f12e6-6551-4581-a8a2-55d675ad14c0,2026-08-03T07:26:51.456749
+BQ-6-0325,EMP104,GENERAL,Security Policy Refusal: Your request contains patterns that violate our security policy and cannot be processed.,High,True,None,None,Approved,Flagged,cf212960-9e01-4a4e-a227-a8d1cf05f6a6,2026-08-03T07:26:51.472733
+BQ-7-920F,EMP999,EXPENSE,Access Refusal: Employee ID 'EMP999' is invalid or not registered in the employee directory.,High,False,None,None,Denied,Safe,c563fb19-f615-49b8-a3bc-9e12cd845818,2026-08-03T07:26:51.494815
+BQ-8-D63E,EMP102,EXPENSE,Here is your requested information: Expense limit for Bob Jones (EMP102): $1200.00 per claim.,High,False,ExpenseTool,None,Approved,Safe,296c29f4-198a-41f9-ab44-b792b9d0968f,2026-08-03T07:26:51.523719

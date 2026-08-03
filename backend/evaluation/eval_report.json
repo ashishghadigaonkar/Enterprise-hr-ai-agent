@@ -1,0 +1,11 @@
+{
+  "total_benchmark_samples": 10,
+  "valid_non_refusal_queries": 6,
+  "metrics": {
+    "intent_accuracy": 90.0,
+    "refusal_accuracy": 100.0,
+    "groundedness": 100.0,
+    "hallucination_rate": 0.0,
+    "confidence_accuracy": 100.0
+  }
+}

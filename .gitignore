@@ -19,8 +19,7 @@ env/
 .venv/
 
 # Outputs and Generated Files
-outputs/
-evaluation/eval_report.json
+
 *.log
 
 # IDEs and Editors
