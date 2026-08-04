@@ -55,58 +55,10 @@ The backend runs a directed acyclic graph (DAG) where state is passed from node 
 
 ## 8. System Architecture
 ![System Architecture Diagram](Docs/Architecturediagram.png)
-```mermaid
-graph TD
-    Client[Next.js Dashboard Client / CLI Batch Runner] --> |REST API / HTTP| FastAPI[FastAPI Backend Server]
-    
-    subgraph LangGraph State Machine
-        FastAPI --> GraphRunner[Graph Execution Engine]
-        GraphRunner --> SecurityLayer[Security & Auth Nodes]
-        SecurityLayer --> Classification[Intent Classification]
-        Classification --> ToolRouter[Conditional Router]
-        ToolRouter --> Tools[Mock DB & IT Systems]
-        ToolRouter --> RAG[Pinecone Vector Store]
-        Tools --> Evaluator[Response & Confidence]
-        RAG --> Evaluator
-    end
-    
-    Evaluator --> AuditLog[(CSV Audit Log)]
-    AuditLog --> FastAPI
-```
+
 
 ## 9. LangGraph Workflow
 ![Workflow Diagram](Docs/workflow.png)
-```mermaid
-graph TD
-    START([START]) --> validate_input[validate_input]
-    validate_input --> prompt_injection[prompt_injection]
-    prompt_injection --> classify[classify]
-    classify --> authorization[authorization]
-    
-    authorization -->|Security Flagged or Auth Denied| draft[draft]
-    authorization -->|Intent == PTO| pto_tool[pto_tool]
-    authorization -->|Intent == EXPENSE| expense_tool[expense_tool]
-    authorization -->|Intent == IT_ACCESS| it_tool[it_tool]
-    authorization -->|Intent == HR_POLICY| rag_retrieve[rag_retrieve]
-    authorization -->|Intent == GENERAL| draft[draft]
-    
-    pto_tool --> draft
-    expense_tool --> draft
-    it_tool --> draft
-    rag_retrieve --> draft
-    
-    draft --> evaluate[evaluate]
-    evaluate --> audit[audit]
-    audit --> END([END])
-    
-    classDef security fill:#f9d0c4,stroke:#333,stroke-width:2px;
-    classDef tool fill:#d4e157,stroke:#333,stroke-width:2px;
-    classDef core fill:#90caf9,stroke:#333,stroke-width:2px;
-    
-    class validate_input,prompt_injection,authorization security;
-    class pto_tool,expense_tool,it_tool,rag_retrieve tool;
-    class classify,draft,evaluate,audit core;
-```
 
 ## 10. Folder Structure
 ```text
