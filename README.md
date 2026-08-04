@@ -1,5 +1,6 @@
 🎥 Demo Video
-[![Demo Video](Docs/thumbnil.png)](<YouTube Video Link>)
+[![Demo Video](Docs/thumbnil.png)](https://youtu.be/1YB5xuzr-hg)
+
 
 # Enterprise HR AI Agent 🏢🤖
 

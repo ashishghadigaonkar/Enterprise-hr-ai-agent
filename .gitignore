@@ -27,3 +27,6 @@ env/
 .idea/
 *.swp
 .DS_Store
+
+# Documentation to ignore
+PROJECT_ANALYSIS.md
