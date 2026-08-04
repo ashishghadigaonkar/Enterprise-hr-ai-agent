@@ -1,3 +1,6 @@
+🎥 Demo Video
+[![Demo Video](Docs/thumbnil.png)](<YouTube Video Link>)
+
 # Enterprise HR AI Agent 🏢🤖
 
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
