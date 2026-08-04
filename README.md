@@ -224,5 +224,39 @@ The Next.js dashboard will be accessible at `http://localhost:3000`.
 - **Semantic Security Guardrails**: Integrate specialized semantic security models (e.g., `Llama-Guard`) to supplement regex-based prompt injection detection.
 - **Asynchronous Execution**: Upgrade the graph nodes and FastAPI endpoints to leverage `async`/`await` for improved concurrency under load.
 
-## 27. Conclusion
+## 27. Docker Deployment
+
+### Build
+To build the Docker images for both backend and frontend:
+```bash
+docker compose build
+```
+
+### Run
+To start the application in the background:
+```bash
+docker compose up -d
+```
+- The frontend will be available at [http://localhost:3000](http://localhost:3000)
+- The backend API will be available at [http://localhost:8000](http://localhost:8000)
+
+### Stop
+To stop and remove the containers:
+```bash
+docker compose down
+```
+
+### View Logs
+To view the logs of the running containers:
+```bash
+docker compose logs -f
+```
+
+### Rebuild
+To rebuild images and restart the containers (useful after making changes):
+```bash
+docker compose up --build -d
+```
+
+## 28. Conclusion
 This implementation demonstrates a mature, production-oriented approach to building Enterprise AI workflows. By wrapping a robust LangGraph state machine inside a FastAPI backend and visualizing it via Next.js, the project successfully meets the assignment requirements while prioritizing determinism, security, and enterprise observability.

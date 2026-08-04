@@ -1,0 +1,15 @@
+__pycache__
+venv
+.venv
+env
+.env
+.git
+outputs
+logs
+.pytest_cache
+*.pyc
+*.pyo
+*.pyd
+.Python
+env.bak
+venv.bak

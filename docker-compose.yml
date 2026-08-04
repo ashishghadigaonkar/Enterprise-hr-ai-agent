@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hr-ai-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      # Optional overrides can go here
+      - PYTHONUNBUFFERED=1
+    networks:
+      - hr-agent-network
+    restart: unless-stopped
+    volumes:
+      # Mount outputs directory to persist logs and results
+      - ./backend/outputs:/app/outputs
+      - ./backend/data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: hr-ai-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - BACKEND_URL=http://backend:8000/api
+      # Instruct Next.js standalone server to not listen on host loopback only
+      - HOSTNAME=0.0.0.0
+    networks:
+      - hr-agent-network
+    restart: unless-stopped
+
+networks:
+  hr-agent-network:
+    driver: bridge
