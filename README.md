@@ -54,6 +54,7 @@ The backend runs a directed acyclic graph (DAG) where state is passed from node 
 - **Frontend**: Next.js 15, Tailwind CSS, shadcn/ui
 
 ## 8. System Architecture
+![System Architecture Diagram](Docs/Architecturediagram.png)
 ```mermaid
 graph TD
     Client[Next.js Dashboard Client / CLI Batch Runner] --> |REST API / HTTP| FastAPI[FastAPI Backend Server]
@@ -74,6 +75,7 @@ graph TD
 ```
 
 ## 9. LangGraph Workflow
+![Workflow Diagram](Docs/workflow.png)
 ```mermaid
 graph TD
     START([START]) --> validate_input[validate_input]
